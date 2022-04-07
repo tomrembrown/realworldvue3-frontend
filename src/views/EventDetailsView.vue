@@ -7,25 +7,25 @@
 </template>
 
 <script>
-import EventService from '@/services/EventService.js'
+import EventService from "@/services/EventService.js";
 
 export default {
-  name: 'EventDetailsView',
-  props: ['id'],
+  name: "EventDetailsView",
+  props: ["id"],
   data() {
     return {
       event: null,
-    }
+    };
   },
   created() {
     EventService.getEvent(this.id)
-      .then(response => {
-        this.event = response.data
+      .then((response) => {
+        this.event = response.data;
       })
-      .catch(error => {
+      .catch((error) => {
         // eslint-disable-next-line
         console.log(error)
-      })
+      });
   },
-}
+};
 </script>
